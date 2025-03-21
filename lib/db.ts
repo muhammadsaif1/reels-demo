@@ -4,7 +4,7 @@ const mongoString = process.env.MONGODB_URL!;
 
 if (!mongoString) throw new Error("Please check Mongo Url");
 
-let cached = globalThis.mongoose;
+let cached = global.mongoose;
 
 if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
